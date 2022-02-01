@@ -1,10 +1,12 @@
 module.exports = {
   extends: [
+    "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
   ],
   plugins: ["react", "@typescript-eslint", "jest"],
   env: {
