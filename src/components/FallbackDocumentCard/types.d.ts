@@ -1,5 +1,5 @@
 import React from 'react'
 
-export type LayoutProps = {
+export type FallbackDocumentCardProps = {
   children?: React.ReactNode
 } & React.HTMLAttributes<HTMLDivElement>

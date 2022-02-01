@@ -6,10 +6,12 @@ export const H1 = styled.h1`
   letter-spacing: 0;
   line-height: 24px;
   text-transform: capitalize;
+  color: #000000;
 `
 
 export const P = styled.p`
   font-size: 16px;
   letter-spacing: 0;
   line-height: 24px;
+  color: #000000;
 `

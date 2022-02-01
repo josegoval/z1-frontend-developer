@@ -7,6 +7,8 @@ export const StyledButton = styled.button<ButtonProps>`
   min-height: 48px;
   min-width: 160px;
   padding: 12px 20px;
+  border-width: 0;
+
   /* font */
   text-transform: uppercase;
   font-size: 16px;
@@ -23,8 +25,8 @@ export const StyledButton = styled.button<ButtonProps>`
       box-shadow: 0 10px 20px -5px ${({ theme: { colors } }) => colors.primary300};
 
       :hover {
-        background-color: ${({ theme: { colors } }) => colors.primary300};
-        box-shadow: 0 10px 20px 0px ${({ theme: { colors } }) => colors.primary300};
+        background-color: ${({ theme: { colors } }) => colors.primary800};
+        box-shadow: 0 10px 20px -2px ${({ theme: { colors } }) => colors.primary300};
       }
     `}
   /* variants */
