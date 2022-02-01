@@ -1,7 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { DocumentCardPropsProps } from './types'
 
-export const Container = styled.div`
+export const Container = styled.div<DocumentCardPropsProps>`
   position: relative;
   display: flex;
   justify-content: center;
@@ -14,6 +15,16 @@ export const Container = styled.div`
   border-radius: 12px;
   background-color: #ffffff;
   box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.15);
+
+  ${({ imageSrc, isValid, theme: { colors } }) =>
+    imageSrc &&
+    css`
+      border: 2px solid ${isValid ? colors.success : colors.error};
+    `}
+`
+
+export const FeedbackLabel = styled.p`
+  /* TODO: componetize */
 `
 
 export const ChildContainer = styled.div`
@@ -25,4 +36,11 @@ export const ChildContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+`
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `
