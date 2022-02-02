@@ -17,6 +17,10 @@ export const StyledButton = styled.button<ButtonProps>`
   line-height: 24px;
   color: #ffffff;
 
+  :hover {
+    cursor: pointer;
+  }
+
   /* colors */
   ${({ color }) =>
     color === 'primary' &&
@@ -30,9 +34,18 @@ export const StyledButton = styled.button<ButtonProps>`
       }
     `}
   /* variants */
-  ${({ variant }) =>
-    variant === 'rounded' &&
-    css`
-      border-radius: 24px;
-    `}
+  ${({ variant }) => {
+    if (variant === 'rounded')
+      return css`
+        border-radius: 24px;
+      `
+    return css`
+      background: none;
+      box-shadow: none;
+      :hover {
+        background: none;
+        box-shadow: none;
+      }
+    `
+  }}
 `
