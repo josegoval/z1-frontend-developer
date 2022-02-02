@@ -1,10 +1,14 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { css, keyframes } from 'styled-components'
 import MOCK_BACKGROUND_IMG_SRC from '../../assets/backgrounds/andyone--WW8jBak7bo-unsplash.jpg'
+import { P } from '../../components/typography/styles'
 import { AutoIdDocumentScannerProps } from './types'
 
 export const Container = styled.div<Partial<AutoIdDocumentScannerProps>>`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 179px;
   width: 289px;
   border-radius: 18px;
@@ -44,7 +48,6 @@ export const AnimatedScanner = styled.div`
   width: 290px;
   position: absolute;
   z-index: 10;
-  /* TODO: remove if not necessary */
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 0) 3%,
@@ -56,4 +59,14 @@ export const AnimatedScanner = styled.div`
   -webkit-animation: ${ScanAnimation} 3s infinite;
   animation: ${ScanAnimation} 3s infinite;
   -webkit-animation-direction: alternate-reverse;
+  animation-direction: alternate-reverse;
+`
+
+export const FeedbackText = styled(P)`
+  position: absolute;
+  bottom: -53px;
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+  color: #ffffff;
 `
