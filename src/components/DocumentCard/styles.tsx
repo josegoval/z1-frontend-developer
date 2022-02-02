@@ -12,7 +12,6 @@ export const Container = styled.div<DocumentCardPropsProps>`
   height: 160px;
   width: 260px;
 
-  padding: 18px;
   border-radius: 12px;
   background-color: #ffffff;
   box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.15);
