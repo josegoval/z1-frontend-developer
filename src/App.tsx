@@ -1,13 +1,12 @@
-import { ThemeProvider } from "styled-components";
-import "./App.css";
-import theme from "./styles/theme";
+import Provider from './containers/Provider'
+import ScanView from './containers/ScanView'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div />
-    </ThemeProvider>
-  );
+    <Provider>
+      <ScanView />
+    </Provider>
+  )
 }
 
-export default App;
+export default App
