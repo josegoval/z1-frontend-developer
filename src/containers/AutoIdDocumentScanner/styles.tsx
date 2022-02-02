@@ -8,6 +8,7 @@ export const Container = styled.div<Partial<AutoIdDocumentScannerProps>>`
   height: 179px;
   width: 289px;
   border-radius: 18px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
   ${({ imageSrc, isDocumentValid, theme: { colors } }) =>
     imageSrc &&
@@ -39,7 +40,7 @@ const ScanAnimation = keyframes`
 `
 
 export const AnimatedScanner = styled.div`
-  height: 3px;
+  height: 1px;
   width: 290px;
   position: absolute;
   z-index: 10;

@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
 import { ModalProps } from './types'
-import FALLBACK_BACKGROUND_IMG_SRC from '../../assets/backgrounds/andyone--WW8jBak7bo-unsplash.jpg'
 
 export const Container = styled.div<ModalProps>`
   /* layout */
@@ -10,18 +9,39 @@ export const Container = styled.div<ModalProps>`
   max-width: 100vw;
   max-height: 100vh;
   z-index: 100;
-  /* background */
-  background: ${({ backgroundImageSrc, theme: { colors } }) => `linear-gradient(0deg, ${
-    colors.overlay
-  }, ${colors.overlay}),
-    url(${backgroundImageSrc || FALLBACK_BACKGROUND_IMG_SRC})}`};
-  background-size: cover;
+
+  ::after {
+    content: ''; // ::before and ::after both require content
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme: { colors } }) => colors.overlay};
+    z-index: 2;
+  }
+`
+
+export const BackgroundImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+  z-index: 1;
   /* blur effect */
-  /* -webkit-filter: blur(3px);
+  -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px);
-  transform: scale(1.015); */
-  /* spacing */
+  transform: scale(1.015);
+`
+
+export const ChildrenContainer = styled.div`
+  position: absolute;
+  inset: 0;
+  max-width: 100vw;
+  z-index: 3;
+  margin: 0;
   padding: 104.55px 46px 48px;
 `
