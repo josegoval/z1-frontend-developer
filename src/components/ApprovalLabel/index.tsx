@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { Label } from './styles'
 import { ApprovalLabelProps } from './types'
 import { ReactComponent as ApprovedIconSvg } from '../../assets/icons/approved-icon.svg'

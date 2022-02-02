@@ -1,4 +1,3 @@
-import React from 'react'
 import { ChildContainer, Container, Image, StatusPill } from './styles'
 import { ReactComponent as DocumentFallbackSvg } from '../../assets/document-fallback-sketch.svg'
 import { DocumentCardPropsProps } from './types'
