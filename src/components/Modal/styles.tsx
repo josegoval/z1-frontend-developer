@@ -7,8 +7,8 @@ export const Container = styled.div<ModalProps>`
   /* layout */
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   z-index: 100;
   /* background */
   background: ${({ backgroundImageSrc, theme: { colors } }) => `linear-gradient(0deg, ${
@@ -17,11 +17,11 @@ export const Container = styled.div<ModalProps>`
     url(${backgroundImageSrc || FALLBACK_BACKGROUND_IMG_SRC})}`};
   background-size: cover;
   /* blur effect */
-  -webkit-filter: blur(3px);
+  /* -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px);
-  transform: scale(1.015);
+  transform: scale(1.015); */
   /* spacing */
   padding: 104.55px 46px 48px;
 `
