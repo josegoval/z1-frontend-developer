@@ -11,6 +11,7 @@ const useLogic = () => {
   // but since you ask for hooks, I decided to set it here.
   const handleEnableCameraModal = useCallback(() => {
     setIsCameraModalVisible(true)
+    setPicture('')
   }, [setIsCameraModalVisible])
 
   const handleDisableCameraModal = useCallback(() => {
