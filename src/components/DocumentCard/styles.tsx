@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components'
+import ApprovalLabel from '../ApprovalLabel'
 import { DocumentCardPropsProps } from './types'
 
 export const Container = styled.div<DocumentCardPropsProps>`
@@ -43,4 +44,11 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+`
+
+export const StatusPill = styled(ApprovalLabel)`
+  position: absolute;
+  bottom: -15px;
+  right: 24px;
+  z-index: 3;
 `

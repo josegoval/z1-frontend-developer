@@ -24,7 +24,11 @@ export default function ScanView() {
         </Description>
         {/* TODO: image rendering with document image */}
         <DocumentCard isValid={isDocumentValid} imageSrc={picture}>
-          <Button onClick={handleEnableCameraModal}>Take picture</Button>
+          {!isDocumentValid && (
+            <Button onClick={handleEnableCameraModal}>
+              {picture ? 'Retake picture' : 'Take picture'}
+            </Button>
+          )}
         </DocumentCard>
         {/* TODO: camera modal (use React.memo) */}
       </Container>
