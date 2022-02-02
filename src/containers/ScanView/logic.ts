@@ -6,7 +6,7 @@ const useLogic = () => {
   const [isDocumentValid, setIsDocumentValid] = useState(false)
   const [isCameraModalVisible, setIsCameraModalVisible] = useState(false)
 
-  // WARNING: To me, all these useCallbacks is overoptimizing,
+  // WARNING: To me, all these useCallbacks are overoptimizing,
   // and probably not good for performance,
   // but since you ask for hooks, I decided to set it here.
   const handleEnableCameraModal = useCallback(() => {
@@ -19,7 +19,6 @@ const useLogic = () => {
 
   const handleScan = useCallback<OnScanFunction>(
     (image, isValid) => {
-      console.log('SCANNED -> IS VALID', isValid)
       setPicture(image)
       setIsDocumentValid(isValid)
     },

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container, Header, HeaderTitle, Content } from './styles'
 import { LayoutProps } from './types'
 

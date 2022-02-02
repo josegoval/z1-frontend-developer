@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from '../../components/Button'
 import DocumentCard from '../../components/DocumentCard'
 import Layout from '../../components/Layout'
@@ -23,7 +22,6 @@ export default function ScanView() {
         <Description>
           Take a picture. It may take time to validate your personal information.
         </Description>
-        {/* TODO: image rendering with document image */}
         <DocumentCard isValid={isDocumentValid} imageSrc={picture}>
           {!isDocumentValid && (
             <Button onClick={handleEnableCameraModal}>
@@ -31,7 +29,6 @@ export default function ScanView() {
             </Button>
           )}
         </DocumentCard>
-        {/* TODO: camera modal (use React.memo) */}
         <CameraModal
           isVisible={isCameraModalVisible}
           onCancel={handleDisableCameraModal}

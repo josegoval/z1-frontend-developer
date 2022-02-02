@@ -12,7 +12,6 @@ function CameraModal({
   imageSrc,
   ...props
 }: CameraModalProps) {
-  console.log('RE-RENDER')
   return (
     <StyledModal isVisible={isVisible} {...props}>
       <Content>
