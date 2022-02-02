@@ -1,14 +1,11 @@
-import { ThemeProvider } from 'styled-components'
+import Provider from './containers/Provider'
 import ScanView from './containers/ScanView'
-import GlobalStyle from './styles/GlobalStyle'
-import theme from './styles/theme'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <Provider>
       <ScanView />
-    </ThemeProvider>
+    </Provider>
   )
 }
 
