@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import validateIdDocument from '../../api/idDocuments'
+import { OnScanFunction } from '../AutoIdDocumentScanner/types'
 
 const useLogic = () => {
   const [picture, setPicture] = useState('')
@@ -17,12 +17,11 @@ const useLogic = () => {
     setIsCameraModalVisible(false)
   }, [setIsCameraModalVisible])
 
-  const handleAutoTakePicture = useCallback(
-    async (document: string) => {
-      setPicture(document)
-      const isValid = (await validateIdDocument(document)).summary.outcome === 'Approved'
+  const handleScan = useCallback<OnScanFunction>(
+    (image, isValid) => {
+      console.log('SCANNED -> IS VALID', isValid)
+      setPicture(image)
       setIsDocumentValid(isValid)
-      // WARNING: I would the below useEffect here
     },
     [setPicture, setIsDocumentValid]
   )
@@ -43,7 +42,7 @@ const useLogic = () => {
     isCameraModalVisible,
     handleEnableCameraModal,
     handleDisableCameraModal,
-    handleAutoTakePicture,
+    handleScan,
   }
 }
 

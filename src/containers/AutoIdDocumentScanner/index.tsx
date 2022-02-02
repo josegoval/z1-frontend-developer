@@ -1,26 +1,19 @@
-import React from 'react'
-import Button from '../../components/Button'
-import DocumentCard from '../../components/DocumentCard'
-import Layout from '../../components/Layout'
-import Modal from '../../components/Modal'
 import useLogic from './logic'
-import { AnimatedScanner, Container } from './styles'
+import { AnimatedScanner, Container, Image } from './styles'
 import { AutoIdDocumentScannerProps } from './types'
 
 export default function AutoIdDocumentScanner({
-  isValid,
+  isDocumentValid,
   imageSrc,
   onScan,
   ...props
 }: AutoIdDocumentScannerProps) {
+  useLogic(imageSrc, isDocumentValid, onScan)
+
   return (
-    <Container isValid={isValid} imageSrc={imageSrc} {...props}>
-      {/* Mock id document */}
-      {imageSrc ? (
-        <img src={imageSrc} width="100%" height="100%" alt="Your scan" />
-      ) : (
-        <AnimatedScanner />
-      )}
+    <Container isDocumentValid={isDocumentValid} imageSrc={imageSrc} {...props}>
+      {/* Mock id documents */}
+      {imageSrc ? <Image src={imageSrc} alt="Your scan" /> : <AnimatedScanner />}
     </Container>
   )
 }

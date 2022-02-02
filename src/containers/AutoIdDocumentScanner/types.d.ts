@@ -1,7 +1,9 @@
 import { HTMLAttributes } from 'react'
 
+export type OnScanFunction = (image: string, isValid: bool) => unknown
+
 export type AutoIdDocumentScannerProps = {
-  isValid: boolean
+  isDocumentValid: boolean
   imageSrc: string
-  onScan: (image: string, isValid: bool) => unknown
+  onScan: OnScanFunction
 } & HTMLAttributes<HTMLDivElement>
